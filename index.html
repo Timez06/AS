@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A.S DANCE STUDIO w Modlnicy — zajęcia cheerleadingu dla dzieci i młodzieży. Klonowa 6, Modlnica.">
+  <meta name="theme-color" content="#171b4d">
+  <title>A.S DANCE STUDIO | Cheerleading w Modlnicy</title>
+  <style>
+    :root{--navy:#171b4d;--pink:#ed3b8b;--teal:#35c2c7;--orange:#ff9a45;--ink:#20223d;--muted:#666a82;--paper:#fffdfb;--line:#ececf4}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+    .topline{height:7px;background:linear-gradient(90deg,var(--teal),#4d82df,var(--pink),var(--orange))}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,253,251,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(23,27,77,.08)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.05em;color:var(--navy);font-size:1.12rem;line-height:1.05}
+    .brandmark{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,var(--teal),#4e7ce0 52%,var(--pink));display:grid;place-items:center;color:white;font-weight:1000;font-size:1rem;box-shadow:0 7px 18px #343b8b25}
+    .brand small{display:block;letter-spacing:.18em;font-size:.58rem;margin-top:5px;color:var(--pink)}
+    .links{display:flex;align-items:center;gap:25px;font-size:.91rem;font-weight:750;color:#454762}
+    .links a:hover{color:var(--pink)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 21px;font-weight:850;background:var(--pink);color:white;box-shadow:0 8px 20px #ed3b8b30;transition:transform .2s,box-shadow .2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px #ed3b8b45}
+    .menu{display:none;background:none;border:0;color:var(--navy);font-size:1.7rem}
+    .hero{position:relative;overflow:hidden;padding:82px 0 76px;background:radial-gradient(ellipse at 85% 15%,#ffd9e9 0,transparent 30%),radial-gradient(ellipse at 10% 95%,#d7f8f5 0,transparent 32%),#fffafc}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero:before{width:280px;height:280px;border:34px solid #35c2c720;right:-100px;bottom:-120px}
+    .hero:after{width:120px;height:120px;border:18px solid #ed3b8b18;left:-45px;top:70px}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:48px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #e8e6f2;background:white;padding:8px 13px;border-radius:999px;color:var(--navy);font-size:.78rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px #35c2c725}
+    h1{font-size:clamp(3rem,6.5vw,5.7rem);line-height:.94;letter-spacing:-.07em;margin:23px 0 22px;color:var(--navy)}
+    h1 span{display:block;color:var(--pink)}
+    .hero p{font-size:1.12rem;max-width:570px;color:#5b5d77;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn.secondary{background:white;color:var(--navy);border:1px solid #e3e3ee;box-shadow:none}
+    .hero-note{display:flex;gap:10px;align-items:center;margin-top:22px;color:#6b6c83;font-size:.88rem}
+    .hero-note strong{color:var(--navy)}
+    .visual{min-height:460px;position:relative;display:grid;place-items:center}
+    .orbit{position:absolute;width:390px;height:390px;border:1.5px dashed #8c8eb6;border-radius:50%;transform:rotate(-18deg)}
+    .photo-card{width:min(100%,410px);aspect-ratio:4/4.4;border-radius:34px;background:linear-gradient(145deg,#32bdc7,#647ee8 52%,#ef3e8b);padding:12px;box-shadow:0 30px 70px #20234d28;transform:rotate(2deg);position:relative}
+    .photo-inner{height:100%;border-radius:25px;background:linear-gradient(155deg,#ffffffee,#fff9fddd),repeating-linear-gradient(135deg,#35c2c7 0 2px,transparent 2px 14px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;overflow:hidden;position:relative}
+    .photo-inner:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#35c2c71b;top:-80px;right:-65px}
+    .photo-inner:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#ed3b8b16;bottom:-65px;left:-45px}
+    .spark{font-size:3.5rem;line-height:1;color:var(--pink);position:relative;z-index:1}
+    .photo-inner .big{font-weight:1000;letter-spacing:-.06em;color:var(--navy);font-size:clamp(2.1rem,4vw,3.3rem);line-height:.96;margin:16px 0 12px;position:relative;z-index:1}
+    .photo-inner .sub{font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:#5d638c;font-size:.8rem;position:relative;z-index:1}
+    .mini-pill{background:var(--navy);color:white;padding:12px 18px;border-radius:999px;font-weight:850;font-size:.88rem;margin-top:23px;position:relative;z-index:1}
+    .sticker{position:absolute;z-index:2;background:white;padding:13px 17px;border-radius:18px;box-shadow:0 14px 35px #20234d1c;font-weight:900;color:var(--navy)}
+    .sticker b{color:var(--pink)}
+    .sticker.one{top:34px;left:-14px;transform:rotate(-7deg)}
+    .sticker.two{right:-16px;bottom:44px;transform:rotate(6deg)}
+    .ticker{background:var(--navy);color:white;overflow:hidden}
+    .ticker-inner{display:flex;justify-content:center;align-items:center;gap:24px;padding:15px 0;font-weight:850;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;flex-wrap:wrap}
+    .ticker span{color:var(--teal)}
+    section{padding:86px 0}
+    .section-head{max-width:680px;margin:0 auto 38px;text-align:center}
+    .kicker{color:var(--pink);font-weight:900;text-transform:uppercase;letter-spacing:.15em;font-size:.75rem}
+    h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.02;letter-spacing:-.055em;color:var(--navy);margin:12px 0}
+    .section-head p{color:var(--muted);margin:0;font-size:1.02rem}
+    .classes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .class-card{border:1px solid var(--line);border-radius:25px;padding:25px;background:white;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+    .class-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px #25265010}
+    .class-card:before{content:"";position:absolute;right:-35px;top:-40px;width:120px;height:120px;border-radius:50%;background:var(--wash)}
+    .class-card:nth-child(1){--accent:var(--pink);--wash:#ffdfed}
+    .class-card:nth-child(2){--accent:#278fbd;--wash:#dff7fa}
+    .class-card:nth-child(3){--accent:#e77b2d;--wash:#ffecd9}
+    .iconbox{width:54px;height:54px;border-radius:17px;background:var(--wash);display:grid;place-items:center;font-size:1.7rem;position:relative}
+    .class-card h3{font-size:1.35rem;color:var(--navy);margin:21px 0 8px;letter-spacing:-.03em}
+    .class-card p{color:var(--muted);margin:0 0 20px}
+    .tag{display:inline-block;background:#f6f6fa;color:var(--accent);border-radius:8px;padding:6px 9px;font-weight:850;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}
+    .schedule{background:#f7f8fc}
+    .schedule-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:38px;align-items:start}
+    .schedule-intro{background:var(--navy);color:white;padding:30px;border-radius:26px;position:sticky;top:105px}
+    .schedule-intro h3{font-size:1.8rem;line-height:1.05;letter-spacing:-.04em;margin:0 0 13px}
+    .schedule-intro p{color:#d8dbf2;margin:0 0 22px}
+    .schedule-intro .pin{font-size:1.6rem;color:var(--teal)}
+    .schedule-list{display:grid;gap:12px}
+    .schedule-item{background:white;border:1px solid #e8eaf3;border-radius:18px;padding:19px 21px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .schedule-item h4{margin:0 0 3px;color:var(--navy);font-size:1.02rem}
+    .schedule-item p{margin:0;color:var(--muted);font-size:.9rem}
+    .time{background:#f1f3fb;color:var(--navy);padding:9px 12px;border-radius:12px;font-size:.84rem;font-weight:900;white-space:nowrap}
+    .day{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-weight:900}
+    .trial{padding:0 0 86px;background:#f7f8fc}
+    .trial-box{background:linear-gradient(115deg,var(--pink),#d72c85 55%,#8d4cbb);border-radius:30px;padding:37px 42px;color:white;display:flex;align-items:center;justify-content:space-between;gap:25px;position:relative;overflow:hidden}
+    .trial-box:after{content:"✦";position:absolute;font-size:13rem;line-height:1;right:28%;top:-45px;color:#ffffff12}
+    .trial-box h2{color:white;margin:0 0 8px}
+    .trial-box p{margin:0;color:#ffe7f2}
+    .trial-box .btn{background:white;color:var(--navy);box-shadow:none;position:relative;z-index:1;white-space:nowrap}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .about-art{background:linear-gradient(135deg,#d9f7f5,#fbe0ef);border-radius:28px;min-height:330px;display:grid;place-items:center;padding:30px;position:relative;overflow:hidden}
+    .about-art .circle{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#7586e8 55%,var(--pink));display:grid;place-items:center;color:white;font-size:5rem;box-shadow:0 25px 50px #27295220}
+    .about-art .caption{position:absolute;bottom:20px;left:20px;background:white;border-radius:14px;padding:12px 15px;font-weight:900;color:var(--navy);box-shadow:0 8px 20px #20234d12}
+    .about-copy p{color:var(--muted)}
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:23px}
+    .benefit{display:flex;gap:10px;align-items:flex-start;font-weight:800;color:var(--navy);font-size:.92rem}
+    .check{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:8px;background:#dff8f5;color:#16888c;font-weight:1000}
+    .contact{background:#171b4d;color:white}
+    .contact .section-head h2{color:white}
+    .contact .section-head p{color:#d4d7ef}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-card{border:1px solid #ffffff22;background:#ffffff09;border-radius:22px;padding:25px}
+    .contact-card .symbol{font-size:1.5rem}
+    .contact-card h3{margin:12px 0 5px;font-size:1.1rem}
+    .contact-card p{color:#d4d7ef;margin:0}
+    .contact-card a{color:#6fe0df;font-weight:850}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .contact .btn.secondary{background:transparent;color:white;border-color:#ffffff50}
+    footer{background:#101337;color:#aeb2d2;padding:20px 0;font-size:.82rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media(max-width:850px){.links{gap:14px}.hero-grid{grid-template-columns:1fr;gap:25px}.hero{padding:60px 0 48px}.visual{min-height:400px}.photo-card{max-width:360px}.classes{grid-template-columns:1fr}.schedule-grid,.about-grid{grid-template-columns:1fr}.schedule-intro{position:static}.trial-box{align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.wrap{width:min(100% - 28px,1140px)}.nav{min-height:68px}.menu{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.nav-cta{display:none}.hero{padding-top:46px}h1{font-size:3.35rem}.hero p{font-size:1rem}.visual{min-height:350px}.orbit{width:300px;height:300px}.photo-card{max-width:310px}.sticker{font-size:.8rem;padding:10px 12px}.sticker.one{left:0;top:22px}.sticker.two{right:0;bottom:25px}section{padding:65px 0}.schedule-item{grid-template-columns:1fr}.time{justify-self:start}.trial-box{padding:28px 24px}.benefits{grid-template-columns:1fr}.contact-actions .btn{width:100%}.ticker-inner{gap:10px;font-size:.7rem}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#start" aria-label="A.S Dance Studio — strona główna">
+        <span class="brandmark">A.S</span><span>A.S DANCE STUDIO<small>RUCH • PASJA • ENERGIA</small></span>
+      </a>
+      <button class="menu" aria-label="Otwórz menu" aria-expanded="false" id="menuBtn">☰</button>
+      <nav class="links" id="navLinks">
+        <a href="#zajecia">Zajęcia</a><a href="#grafik">Grafik</a><a href="#studio">O studiu</a><a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="nav-cta" href="#kontakt">Zapisz się ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Modlnica • startujemy w listopadzie 2026</div>
+          <h1>Znajdź swój <span>rytm!</span></h1>
+          <p>Ruch, energia i świetna atmosfera! Dołącz do naszych grup cheerleadingowych, rozwijaj koordynację, pewność siebie i baw się razem z nami.</p>
+          <div class="hero-actions"><a class="btn" href="#zajecia">Odkryj zajęcia <span aria-hidden="true">&nbsp;↗</span></a><a class="btn secondary" href="#grafik">Sprawdź grafik</a></div>
+          <div class="hero-note"><strong>✦ Pierwsze zajęcia gratis!</strong><span>Dołącz do naszej ekipy.</span></div>
+        </div>
+        <div class="visual" aria-label="Grafika promująca zajęcia taneczne">
+          <div class="orbit"></div>
+          <div class="photo-card"><div class="photo-inner">
+            <div class="spark">✳</div><div class="big">MOVE<br>WITH JOY</div>
+            <div class="sub">CHEERLEADING • RUCH • PASJA</div><div class="mini-pill">TU ZACZYNA SIĘ TWOJA PRZYGODA</div>
+          </div></div>
+          <div class="sticker one">✨ <b>Ruszaj się</b><br>na własnych zasadach</div>
+          <div class="sticker two">💗 Dobra energia<br>dla każdego!</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker"><div class="wrap ticker-inner"><span>✦</span> Cheerleading <span>✦</span> Fitness Step <span>✦</span> Slow Sunday <span>✦</span> Klonowa 6, Modlnica <span>✦</span></div></div>
+
+    <section id="zajecia">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Wybierz coś dla siebie</div><h2>Odkryj świat<br>cheerleadingu.</h2><p>Poznaj nasze grupy, rozwijaj umiejętności i stań się częścią zgranego zespołu.</p></div>
+        <div class="classes" style="grid-template-columns:minmax(0,760px);justify-content:center">
+          <article class="class-card"><div class="iconbox">🎀</div><h3>Cheerleading</h3><p>Zajęcia dla dzieci i młodzieży, które łączą taniec, pracę z pomponami, elementy akrobatyczne, koordynację i współpracę w zespole. Przede wszystkim — dużo ruchu, radości i dobrej zabawy!</p><span class="tag">Grupy 6–14 lat</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule" id="grafik">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Zaplanuj swój tydzień</div><h2>Grafik zajęć</h2><p>Sprawdź godziny grup cheerleadingowych. Wszystkie zajęcia odbywają się przy ul. Klonowej 6 w Modlnicy.</p></div>
+        <div class="schedule-grid">
+          <div class="schedule-intro"><div class="pin">⌖</div><h3>Do zobaczenia<br>na sali!</h3><p>Wybierz grupę i skontaktuj się z nami, aby zapisać się na zajęcia.</p><a class="btn" href="#kontakt">Zapytaj o miejsce ↗</a></div>
+          <div class="schedule-list">
+            <div class="schedule-item"><div><div class="day">Poniedziałek</div><h4>Cheerleading — grupa Mini</h4><p>Dla dzieci w wieku 6–8 lat</p></div><div class="time">16:30–17:30</div></div>
+            <div class="schedule-item"><div><div class="day">Poniedziałek</div><h4>Cheerleading — grupa Junior</h4><p>Dla dzieci w wieku 9–11 lat</p></div><div class="time">17:45–18:45</div></div>
+            <div class="schedule-item"><div><div class="day">Poniedziałek</div><h4>Cheerleading — grupa Junior Starsza</h4><p>Dla młodzieży w wieku 12–14 lat</p></div><div class="time">19:00–20:00</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trial"><div class="wrap"><div class="trial-box"><div><h2>Twoje pierwsze zajęcia są gratis!</h2><p>Sprawdź, jak dobrze można poczuć się w ruchu. Zapisy już trwają.</p></div><a class="btn" href="#kontakt">Dołącz do nas ↗</a></div></div></div>
+
+    <section id="studio">
+      <div class="wrap about-grid">
+        <div class="about-art"><div class="circle">✦</div><div class="caption">Twoje miejsce. Twoja energia.</div></div>
+        <div class="about-copy"><div class="kicker">Poznaj nas</div><h2>Więcej niż zajęcia.</h2><p>A.S DANCE STUDIO to miejsce, w którym dzieci i młodzież rozwijają pasję do cheerleadingu, budują pewność siebie i uczą się współpracy. Chcemy, żeby każda osoba czuła się częścią zespołu.</p><p>Pracujemy nad kondycją, koordynacją i sprawnością, a przede wszystkim tworzymy zgraną ekipę.</p>
+          <div class="benefits"><div class="benefit"><span class="check">✓</span> Przyjazna atmosfera</div><div class="benefit"><span class="check">✓</span> Ruch i dobra zabawa</div><div class="benefit"><span class="check">✓</span> Grupy dziecięce i młodzieżowe</div><div class="benefit"><span class="check">✓</span> Pierwsze zajęcia gratis</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Czekamy na Ciebie</div><h2>Zacznij swoją przygodę!</h2><p>Masz pytania albo chcesz zapisać siebie lub dziecko? Odezwij się do nas.</p></div>
+        <div class="contact-grid">
+          <div class="contact-card"><div class="symbol">📍</div><h3>Odwiedź nasze studio</h3><p>ul. Klonowa 6<br>32-085 Modlnica</p><p style="margin-top:12px"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Klonowa+6+Modlnica">Otwórz mapę ↗</a></p></div>
+          <div class="contact-card"><div class="symbol">📞</div><h3>Zapisz się na zajęcia</h3><p>Telefon: <a href="tel:+48575629998">575 629 998</a></p><p style="margin-top:7px">Instagram: <a target="_blank" rel="noopener" href="https://www.instagram.com/a.s.dancestudioo/">@a.s.dancestudioo ↗</a></p></div>
+        </div>
+        <div class="contact-actions"><a class="btn" href="tel:+48575629998">Zadzwoń: 575 629 998</a><a class="btn secondary" target="_blank" rel="noopener" href="https://www.instagram.com/a.s.dancestudioo/">Napisz na Instagramie</a></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> A.S DANCE STUDIO</span><span>Klonowa 6, Modlnica • Cheerleading • Ruch • Pasja</span></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
